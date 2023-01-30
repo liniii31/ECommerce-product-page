@@ -6,6 +6,7 @@ import {useState} from 'react';
 function App() {
   let [quantity,setQuantity] = useState(0);
   let [pic,setPic] = useState(1);
+  
   function changeImage(e){
     updateThumbnails();
     e.target.style.opacity="0.5";
@@ -76,9 +77,17 @@ function App() {
       setPic(1);
     }
   }
+  function trash(e){
+    setQuantity(0);
+  }
+  let props = {
+    quantity : quantity,
+    remove : trash
+  }
   return (
+    
     <div className="App">
-      <Navbar quantity={quantity}/>
+      <Navbar {...props}/>
       <main>
         <div className="main-left">
           <button id="product" className="product-image"></button>

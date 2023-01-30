@@ -90,7 +90,7 @@ function Navbar(props) {
                                 <div className="cart-details-2-2">$127.00x{props.quantity}&nbsp;<b className="black">${127.00*props.quantity}</b></div>
                             </div>
                             <div className="cart-details-3">
-                                <button className="delete"><i className="bi bi-trash-fill"></i></button>
+                                <button className="delete" onClick={e=>props.remove(e)}><i className="bi bi-trash-fill"></i></button>
                             </div>
                         </div>
                         <div className="cart-button">
